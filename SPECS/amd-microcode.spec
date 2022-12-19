@@ -4,7 +4,7 @@
 
 Summary:        AMD Microcode
 Name:           amd-microcode
-Version:        20220411
+Version:        20220930
 Release:        %{xs_release}%{?dist}
 License:        Redistributable
 URL:            https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
@@ -45,5 +45,8 @@ rm -rf %{buildroot}
 /lib/firmware/amd-ucode
 
 %changelog
+* Mon Dec 19 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 20220930-1
+- Update to 20220930
+
 * Thu Oct 06 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 20220411-1
 - Create amd-microcode RPM
