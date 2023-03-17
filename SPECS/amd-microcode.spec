@@ -1,9 +1,10 @@
 # Citrix does not publish SRPMs for their package, so we're duplicating efforts
-%define xs_release 1 
+%define xs_release 2
 %define xs_dist xs8
 
 Summary:        AMD Microcode
 Name:           amd-microcode
+# The version number is that of linux-firmware
 Version:        20220930
 Release:        %{xs_release}%{?dist}
 License:        Redistributable
@@ -45,6 +46,13 @@ rm -rf %{buildroot}
 /lib/firmware/amd-ucode
 
 %changelog
+* Fri Mar 17 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 20220930-2
+- Update to the 20230131 drop.
+- Updated CPUs:
+    GN-A1 00a00f10: 2022-09-01, rev 0a001075 -> 2023-01-17, rev 0a001078
+    GN-B1 00a00f11: 2022-08-30, rev 0a0011a8 -> 2023-01-14, rev 0a0011ce
+    GN-B2 00a00f12: 2022-08-30, rev 0a00122e -> 2023-01-17, rev 0a001231
+
 * Mon Dec 19 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 20220930-1
 - Update to 20220930
 
