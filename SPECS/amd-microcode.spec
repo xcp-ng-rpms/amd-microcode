@@ -12,6 +12,8 @@ URL:            https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-f
 
 # Source tarball created with `rpm2archive amd-microcode-%{version}-%{xs_release}-%{xs_dist}.noarch.rpm`
 Source0:        %{name}-%{version}-%{xs_release}.%{xs_dist}.noarch.rpm.tgz
+# Temporarily override some files from recent upstream releases to fix security issues
+# FIXME: to be removed once Source0 is updated again.
 Source1: microcode_amd_fam17h.bin
 Source2: microcode_amd_fam19h.bin
 
