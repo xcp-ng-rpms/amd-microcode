@@ -6,7 +6,7 @@ Summary:        AMD Microcode
 Name:           amd-microcode
 # The version number is that of linux-firmware
 Version:        20220930
-Release:        %{xs_release}.1%{?dist}
+Release:        %{xs_release}.2%{?dist}
 License:        Redistributable
 URL:            https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 
@@ -49,6 +49,9 @@ rm -rf %{buildroot}
 /lib/firmware/amd-ucode
 
 %changelog
+* Tue Aug 22 2023 Gael Duperrey <gduperrey@vates.fr> - 20220930-2.2
+- Update microcode for amd_fam19h
+
 * Thu Jul 27 2023 Gael Duperrey <gduperrey@vates.fr> - 20220930-2.1
 - Update microcode for XSA-433 from XS82ECU1041
 
