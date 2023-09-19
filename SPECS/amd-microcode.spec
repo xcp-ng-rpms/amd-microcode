@@ -1,21 +1,17 @@
 # Citrix does not publish SRPMs for their package, so we're duplicating efforts
-%define xs_release 2
+%define xs_release 1
 %define xs_dist xs8
 
 Summary:        AMD Microcode
 Name:           amd-microcode
 # The version number is that of linux-firmware
-Version:        20220930
-Release:        %{xs_release}.2%{?dist}
+Version:        20230725
+Release:        %{xs_release}%{?dist}
 License:        Redistributable
 URL:            https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 
 # Source tarball created with `rpm2archive amd-microcode-%{version}-%{xs_release}-%{xs_dist}.noarch.rpm`
 Source0:        %{name}-%{version}-%{xs_release}.%{xs_dist}.noarch.rpm.tgz
-# Temporarily override some files from recent upstream releases to fix security issues
-# FIXME: to be removed once Source0 is updated again.
-Source1: microcode_amd_fam17h.bin
-Source2: microcode_amd_fam19h.bin
 
 BuildArch:      noarch
 BuildRequires:  kernel-devel
@@ -25,7 +21,6 @@ Microcode blobs for AMD CPUs.  This is a subset of linux-firmware.git
 
 %prep
 %setup -q -c
-cp %{SOURCE1} %{SOURCE2} lib/firmware/amd-ucode/
 
 %build
 
@@ -51,6 +46,10 @@ rm -rf %{buildroot}
 /lib/firmware/amd-ucode
 
 %changelog
+* Tue Sep 19 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 20230725-1
+- Update to 20230725-1
+- This brings us back in sync with XenServer 8
+
 * Tue Aug 22 2023 Gael Duperrey <gduperrey@vates.fr> - 20220930-2.2
 - Update microcode for amd_fam19h
 
