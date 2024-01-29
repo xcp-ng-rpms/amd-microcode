@@ -5,7 +5,7 @@
 Summary:        AMD Microcode
 Name:           amd-microcode
 # The version number is that of linux-firmware
-Version:        20230725
+Version:        20231205
 Release:        %{xs_release}%{?dist}
 License:        Redistributable
 URL:            https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
@@ -46,6 +46,9 @@ rm -rf %{buildroot}
 /lib/firmware/amd-ucode
 
 %changelog
+* Tue Jan 23 2024 Samuel Verschelde <stormi-xcp@ylix.fr> - 20231205-1
+* Update to 20231205-1
+
 * Tue Sep 19 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 20230725-1
 - Update to 20230725-1
 - This brings us back in sync with XenServer 8
