@@ -5,8 +5,8 @@
 Summary:        AMD Microcode
 Name:           amd-microcode
 # The version number is that of linux-firmware
-Version:        20240503
-Release:        %{xs_release}.1%{?dist}
+Version:        20241121
+Release:        %{xs_release}%{?dist}
 License:        Redistributable
 URL:            https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 
@@ -51,6 +51,9 @@ rm -rf %{buildroot}
 /lib/firmware/amd-ucode
 
 %changelog
+* Wed Feb 12 2025 Samuel Verschelde <stormi-xcp@ylix.fr> - 20241121-1
+- Update to 20241121-1
+
 * Wed Nov 27 2024 David Morel <david.morel@vates.tech> - 20240503-1.1
 - Update microcode for amd_fam17h and amd_fam19h from upsteam 2024-11-21 drop
 
