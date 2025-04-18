@@ -6,16 +6,12 @@ Summary:        AMD Microcode
 Name:           amd-microcode
 # The version number is that of linux-firmware
 Version:        20241121
-Release:        %{xs_release}%{?dist}
+Release:        %{xs_release}.1%{?dist}
 License:        Redistributable
 URL:            https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 
 # Source tarball created with `rpm2archive amd-microcode-%{version}-%{xs_release}-%{xs_dist}.noarch.rpm`
 Source0:        %{name}-%{version}-%{xs_release}.%{xs_dist}.noarch.rpm.tgz
-# Temporarily override some files from recent upstream releases to fix security issues
-# FIXME: to be removed once Source0 is updated again.
-Source1: microcode_amd_fam17h.bin
-Source2: microcode_amd_fam19h.bin
 
 BuildArch:      noarch
 BuildRequires:  kernel-devel
@@ -25,7 +21,6 @@ Microcode blobs for AMD CPUs.  This is a subset of linux-firmware.git
 
 %prep
 %setup -q -c
-cp %{SOURCE1} %{SOURCE2} lib/firmware/amd-ucode/
 
 %build
 
@@ -51,6 +46,11 @@ rm -rf %{buildroot}
 /lib/firmware/amd-ucode
 
 %changelog
+* Fri Apr 18 2025 Samuel Verschelde <stormi-xcp@ylix.fr> - 20241121-1.1
+- Packaging fix.
+- Remove overridden amd_fam17h and amd_fam19h files introduced in 20240503-1.1 build
+  as we now get these directly from the "source" tarball.
+
 * Wed Feb 12 2025 Samuel Verschelde <stormi-xcp@ylix.fr> - 20241121-1
 - Update to 20241121-1
 
