@@ -5,7 +5,7 @@
 Summary:        AMD Microcode
 Name:           amd-microcode
 # The version number is that of linux-firmware
-Version:        20250626
+Version:        20251203
 Release:        %{xs_release}.1%{?dist}
 License:        Redistributable
 URL:            https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
@@ -46,6 +46,25 @@ rm -rf %{buildroot}
 /lib/firmware/amd-ucode
 
 %changelog
+* Mon Dec 08 2025 Thierry Escande <thierry.escande@vates.tech> - 20251203-1.1
+- Update to the 2025-12-03 drop as redistributed by XenServer
+  New CPUs:
+     BRH-C1 00b00f21: 2025-10-17, rev 0b002161
+     SHP-C1 00b00f81: 2025-10-20, rev 0b008121
+    BRHD-B0 00b10f10: 2025-10-17, rev 0b101058
+     STX-B0 00b20f40: 2025-10-19, rev 0b204037
+     GNR-B0 00b40f40: 2025-10-20, rev 0b404035
+     GNR-B1 00b40f41: 2025-10-20, rev 0b404108
+     KRK-A0 00b60f00: 2025-10-19, rev 0b600037
+    KRK2-A0 00b60f80: 2025-10-19, rev 0b608038
+    STXH-A0 00b70f00: 2025-10-19, rev 0b700037
+  Secondary blobs on existing CPUs:
+      GN-B1 00a00f11: 2025-04-18, rev 0a0011de
+      GN-B2 00a00f12: 2025-03-27, rev 0a001247
+      RS-B1 00a10f11: 2025-06-09, rev 0a101158
+      RS-B2 00a10f12: 2025-06-12, rev 0a101253
+    RSDN-A2 00aa0f02: 2025-06-12, rev 0aa0021c
+
 * Thu Jul 10 2025 Gael Duperrey <gduperrey@vates.fr> - 20250626-1.1
 - Update to 20250626-1 as redistributed by XenServer
 - Updated CPUs:
