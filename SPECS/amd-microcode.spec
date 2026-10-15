@@ -5,7 +5,7 @@
 Summary:        AMD Microcode
 Name:           amd-microcode
 # The version number is that of linux-firmware
-Version:        20260519
+Version:        20260923
 Release:        %{xs_release}.1%{?dist}
 License:        Redistributable
 URL:            https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
@@ -46,6 +46,12 @@ rm -rf %{buildroot}
 /lib/firmware/amd-ucode
 
 %changelog
+* Wed Oct 14 2026 Gael Duperrey <gduperrey@vates.fr> - 20260923-1.1
+- Update to 2026-09-23 drop as redistributed by XenServer
+  Updated CPUs:
+    BRH-C1 00b00f21: 2025-10-17, rev 0b002162 -> 2026-08-10, rev 0b00217b
+   BRHD-B0 00b10f10: 2025-10-17, rev 0b101059 -> 2026-08-10, rev 0b101068
+
 * Fri Jul 17 2026 Gael Duperrey <gduperrey@vates.fr> - 20260519-1.1
 - Update to 2026-05-19 drop as redistributed by XenServer
   Updated CPUs:
