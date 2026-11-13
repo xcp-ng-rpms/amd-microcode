@@ -1,11 +1,11 @@
 # Citrix does not publish SRPMs for their package, so we're duplicating efforts
-%define xs_release 1
+%define xs_release 2
 %define xs_dist xs8
 
 Summary:        AMD Microcode
 Name:           amd-microcode
 # The version number is that of linux-firmware
-Version:        20260923
+Version:        20261001
 Release:        %{xs_release}.1%{?dist}
 License:        Redistributable
 URL:            https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
@@ -46,6 +46,15 @@ rm -rf %{buildroot}
 /lib/firmware/amd-ucode
 
 %changelog
+* Thu Nov 12 2026 Laudin Molina Troconis <laudin.molina@vates.tech> - 20261001-2.1
+- Update to 2026-10-01 drop as redistributed by XenServer
+  Updated CPUs:
+    GN-B1 00a00f11: 2025-04-18, rev 0a0011de -> 2026-06-19, rev 0a0011e1
+    GN-B2 00a00f12: 2025-03-27, rev 0a001247 -> 2026-06-19, rev 0a00124e
+    RS-B1 00a10f11: 2025-06-09, rev 0a101158 -> 2026-07-06, rev 0a10115b
+    RS-B2 00a10f12: 2025-06-12, rev 0a101253 -> 2026-07-01, rev 0a10125b
+  RSDN-A2 00aa0f02: 2025-06-12, rev 0aa0021c -> 2026-07-06, rev 0aa0021f
+
 * Wed Oct 14 2026 Gael Duperrey <gduperrey@vates.fr> - 20260923-1.1
 - Update to 2026-09-23 drop as redistributed by XenServer
   Updated CPUs:
