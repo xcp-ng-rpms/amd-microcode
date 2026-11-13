@@ -6,7 +6,7 @@ Summary:        AMD Microcode
 Name:           amd-microcode
 # The version number is that of linux-firmware
 Version:        20261001
-Release:        %{xs_release}.1%{?dist}
+Release:        %{xs_release}.1~1471fc489.1%{?dist}
 License:        Redistributable
 URL:            https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
 
